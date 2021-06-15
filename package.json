@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/assert-has-float32array-support",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Detect native Float32Array support.",
   "license": "Apache-2.0",
   "author": {
