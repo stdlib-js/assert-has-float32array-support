@@ -1,0 +1,40 @@
+{
+  "name": "@stdlib/assert-has-float32array-support",
+  "version": "0.0.0",
+  "description": "Detect native Float32Array support.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/assert-has-float32array-support.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdutils",
+    "stdutil",
+    "utilities",
+    "utility",
+    "utils",
+    "util",
+    "detect",
+    "feature",
+    "float32array",
+    "es2015",
+    "es6",
+    "typed array",
+    "typed-array",
+    "support",
+    "has",
+    "native",
+    "issupported",
+    "cli"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
