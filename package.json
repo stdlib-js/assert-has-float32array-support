@@ -46,7 +46,7 @@
     "@stdlib/fs-read-file": "^0.1.0"
   },
   "devDependencies": {
-    "@stdlib/array-float32": "^0.0.6",
+    "@stdlib/array-float32": "^0.1.0",
     "@stdlib/assert-is-boolean": "^0.1.0",
     "@stdlib/assert-is-browser": "^0.1.0",
     "@stdlib/assert-is-windows": "^0.1.0",
