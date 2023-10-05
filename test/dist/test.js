@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2018 The Stdlib Authors.
+* Copyright (c) 2023 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,115 +21,13 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var proxyquire = require( 'proxyquire' );
-var Float32Array = require( '@stdlib/array-float32' );
-var Number = require( '@stdlib/number-ctor' );
-var detect = require( './../../dist' );
-
-
-// VARIABLES //
-
-var hasFloat32Array = ( typeof Float32Array === 'function' );
+var main = require( './../../dist' );
 
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is defined', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof detect, 'function', 'main export is a function' );
+	t.strictEqual( main !== void 0, true, 'main export is defined' );
 	t.end();
-});
-
-tape( 'feature detection result is a boolean', function test( t ) {
-	t.strictEqual( typeof detect(), 'boolean', 'detection result is a boolean' );
-	t.end();
-});
-
-tape( 'if `Float32Array` is supported, detection result is `true`', function test( t ) {
-	var mocked;
-	if ( hasFloat32Array ) {
-		t.strictEqual( detect(), true, 'detection result is `true`' );
-	} else {
-		t.strictEqual( detect(), false, 'detection result is `false`' );
-	}
-	mocked = proxyquire( './../dist/main.js', {
-		'./float32array.js': Mock,
-		'@stdlib/assert-is-float32array': isArray
-	});
-	t.strictEqual( mocked(), true, 'detection result is `true` (mocked)' );
-
-	t.end();
-
-	function isArray() {
-		return true;
-	}
-
-	function Mock() {
-		return [
-			1.0,
-			3.140000104904175,
-			-3.140000104904175,
-			Number.POSITIVE_INFINITY
-		];
-	}
-});
-
-tape( 'if `Float32Array` is not supported, detection result is `false`', function test( t ) {
-	var mocked;
-	if ( hasFloat32Array ) {
-		t.strictEqual( detect(), true, 'detection result is `true`' );
-	} else {
-		t.strictEqual( detect(), false, 'detection result is `false`' );
-	}
-	mocked = proxyquire( './../dist/main.js', {
-		'./float32array.js': {}
-	});
-	t.strictEqual( mocked(), false, 'detection result is `false`' );
-
-	mocked = proxyquire( './../dist/main.js', {
-		'./float32array.js': Mock1
-	});
-	t.strictEqual( mocked(), false, 'detection result is `false`' );
-
-	mocked = proxyquire( './../dist/main.js', {
-		'./float32array.js': Mock2,
-		'@stdlib/assert-is-float32array': isArray
-	});
-	t.strictEqual( mocked(), false, 'detection result is `false`' );
-
-	mocked = proxyquire( './../dist/main.js', {
-		'./float32array.js': Mock3,
-		'@stdlib/assert-is-float32array': isArray
-	});
-	t.strictEqual( mocked(), false, 'detection result is `false`' );
-
-	mocked = proxyquire( './../dist/main.js', {
-		'./float32array.js': Mock4
-	});
-	t.strictEqual( mocked(), false, 'detection result is `false`' );
-
-	t.end();
-
-	function isArray() {
-		return true;
-	}
-
-	function Mock1() {
-		// Not a typed array:
-		return [];
-	}
-
-	function Mock2() {
-		// Does not lose precision...
-		return [ 1.0, 3.14, -3.14, Number.POSITIVE_INFINITY ];
-	}
-
-	function Mock3() {
-		// Does not overflow...
-		return [ 1.0, 3.140000104904175, -3.140000104904175, 5.0e40 ];
-	}
-
-	function Mock4() {
-		throw new Error( 'beep' );
-	}
 });
