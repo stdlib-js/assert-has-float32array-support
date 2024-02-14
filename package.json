@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/assert-has-float32array-support",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Detect native Float32Array support.",
   "license": "Apache-2.0",
   "author": {
@@ -40,10 +40,10 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
-    "@stdlib/assert-is-float32array": "^0.1.1",
+    "@stdlib/assert-is-float32array": "^0.2.0",
     "@stdlib/cli-ctor": "^0.1.1",
-    "@stdlib/constants-float64-pinf": "^0.1.1",
-    "@stdlib/fs-read-file": "^0.1.1"
+    "@stdlib/constants-float64-pinf": "^0.2.0",
+    "@stdlib/fs-read-file": "^0.2.0"
   },
   "devDependencies": {
     "@stdlib/array-float32": "^0.1.1",
