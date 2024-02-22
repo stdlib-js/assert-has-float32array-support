@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import hasFloat32ArraySupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-float32array-support@esm/index.mjs';
+import hasFloat32ArraySupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-float32array-support@v0.2.1-esm/index.mjs';
 ```
 
 #### hasFloat32ArraySupport()
@@ -70,7 +70,7 @@ var bool = hasFloat32ArraySupport();
 <body>
 <script type="module">
 
-import hasFloat32ArraySupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-float32array-support@esm/index.mjs';
+import hasFloat32ArraySupport from 'https://cdn.jsdelivr.net/gh/stdlib-js/assert-has-float32array-support@v0.2.1-esm/index.mjs';
 
 var bool = hasFloat32ArraySupport();
 if ( bool ) {
